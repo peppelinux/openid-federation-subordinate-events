@@ -177,6 +177,7 @@ We would like to thank the following individuals for their contributions to this
 
 - Vladimir Dzhuvinov
 - Roland Hedberg
+- Andres Olave
 
 # Document History
 
@@ -184,4 +185,4 @@ We would like to thank the following individuals for their contributions to this
 
 -01
 
-* Initial version
+* Initial version, fixing OpenID Federation issue #175
