@@ -1,5 +1,5 @@
 %%%
-title = "OpenID Federation Subordinate Events Endpoint 1.0 - draft 01"
+title = "OpenID Federation Subordinate Events Endpoint 1.0 - draft 00"
 abbrev = "openid-federation-subordinate-events"
 ipr = "none"
 workgroup = "individual"
@@ -175,6 +175,10 @@ The following event types are defined in this specification:
 
 Additional event types MAY be defined by trust frameworks or federation operators to meet specific requirements. Such custom event types SHOULD be documented in the respective trust framework or federation operator's documentation.
 
+# Security Considerations
+
+The security considerations of OpenID Federation 1.0 [OpenID.Federation]
+apply to this specification.
 
 {backmatter}
 
@@ -226,18 +230,58 @@ Additional event types MAY be defined by trust frameworks or federation operator
     </front>
 </reference>
 
+# Notices
+
+Copyright (c) 2025 The OpenID Foundation.
+
+The OpenID Foundation (OIDF) grants to any Contributor, developer,
+implementer, or other interested party a non-exclusive, royalty free,
+worldwide copyright license to reproduce, prepare derivative works from,
+distribute, perform and display, this Implementers Draft, Final
+Specification, or Final Specification Incorporating Errata Corrections
+solely for the purposes of (i) developing specifications,
+and (ii) implementing Implementers Drafts, Final Specifications,
+and Final Specification Incorporating Errata Corrections based
+on such documents, provided that attribution be made to the OIDF as the
+source of the material, but that such attribution does not indicate an
+endorsement by the OIDF.
+
+The technology described in this specification was made available
+from contributions from various sources, including members of the OpenID
+Foundation and others. Although the OpenID Foundation has taken steps to
+help ensure that the technology is available for distribution, it takes
+no position regarding the validity or scope of any intellectual property
+or other rights that might be claimed to pertain to the implementation
+or use of the technology described in this specification or the extent
+to which any license under such rights might or might not be available;
+neither does it represent that it has made any independent effort to
+identify any such rights. The OpenID Foundation and the contributors to
+this specification make no (and hereby expressly disclaim any)
+warranties (express, implied, or otherwise), including implied
+warranties of merchantability, non-infringement, fitness for a
+particular purpose, or title, related to this specification, and the
+entire risk as to implementing this specification is assumed by the
+implementer. The OpenID Intellectual Property Rights policy
+(found at openid.net) requires
+contributors to offer a patent promise not to assert certain patent
+claims against other contributors and against implementers.
+OpenID invites any interested party to bring to its attention any
+copyrights, patents, patent applications, or other proprietary rights
+that may cover technology that may be required to practice this
+specification.
+
 # Acknowledgements
 
 We would like to thank the following individuals for their contributions to this specification:
-
-- Vladimir Dzhuvinov
-- Roland Hedberg
-- Andres Olave
+Vladimir Dzhuvinov,
+Roland Hedberg,
+and
+Andres Olave
 
 # Document History
 
 [[ To be removed from the final specification ]]
 
--01
+-00
 
-* Initial version, fixing OpenID Federation issue #175
+* Initial version, fixing OpenID Federation issue #175.
