@@ -41,17 +41,17 @@ The `federation_subordinate_events_endpoint` is introduced to allow Trust Anchor
 
 ## Endpoint Description
 
-The `federation_subordinate_events_endpoint` is an optional endpoint that can be published by Trust Anchors and Intermediates. It must use the `https` scheme and may include port, path, and query parameter components encoded in `application/x-www-form-urlencoded` format. It must not contain a fragment component.
+The `federation_subordinate_events_endpoint` is an optional endpoint that MAY be published by Trust Anchors and Intermediates. It MUST use the `https` scheme and MAY include port, path, and query parameter components encoded in `application/x-www-form-urlencoded` format. It MUST NOT contain a fragment component.
 
 ### Endpoint Location
 
-The location of the `federation_subordinate_events_endpoint` is published in the Entity's metadata using the `federation_subordinate_events_endpoint` parameter.
+The location of the `federation_subordinate_events_endpoint` is published in the `federation_entity` metadata, using the `federation_subordinate_events_endpoint` parameter.
 
 ## Subordinate Historical Events Request
 
 ### Request Format
 
-The request to the `federation_subordinate_events_endpoint` must be an HTTP GET request with the following query parameters, encoded in `application/x-www-form-urlencoded` format:
+The request to the `federation_subordinate_events_endpoint` MUST be an HTTP GET request with the following query parameters, encoded in `application/x-www-form-urlencoded` format:
 
 - **sub**: (REQUIRED) The Entity Identifier of the subject for which the historical track is being requested.
 
