@@ -39,6 +39,15 @@ This specification defines the `federation_subordinate_events_endpoint` for the 
 
 The `federation_subordinate_events_endpoint` is introduced to allow Trust Anchors and Intermediates to maintain and publish a track of registration events about their Immediate Subordinates. This endpoint is useful for transparency and accountability within a federation, by providing a historical record of significant events.
 
+
+# Terminology
+
+This specification uses the terms
+"Entity" as defined by OpenID Connect Core [@!OpenID.Core],
+"Client" as defined by [@!RFC6749],
+and "Trust Mark", "Federation Entity", "Federation Entity Key", "Trust Anchor",
+"Intermediate", and "Subordinate Statement" defined in [@!OpenID.Federation].
+
 ## Endpoint Description
 
 The `federation_subordinate_events_endpoint` is an optional endpoint that MAY be published by Trust Anchors and Intermediates. It MUST use the `https` scheme and MAY include port, path, and query parameter components encoded in `application/x-www-form-urlencoded` format. It MUST NOT contain a fragment component.
@@ -60,15 +69,15 @@ When client authentication is used, the request must be an HTTP POST request, wi
 #### Example Request
 
 ```http
-GET /federation_subordinate_events_endpoint?sub=https%3A%2F%2Frp%2Eexample%2Eedu HTTP/1.1
-Host: edugain.org
+GET /federation_subordinate_events_endpoint?sub=https%3A%2F%2Frp%2Eexample%2Eorg HTTP/1.1
+Host: immediate-superior.example.org
 ```
 
 ## Subordinate Historical Events Response
 
 ### Response Format
 
-A successful response must use the HTTP status code 200 and the content type `application/entity-events-statement+jwt`. The response includes relevant events from the federation's perspective of the Entity. If it is a negative response, it will be a JSON object and the content type must be `application/json`.
+A successful response MUST use the HTTP status code 200 and the content type `application/entity-events-statement+jwt`. The response includes relevant events from the federation's perspective of the Entity. If it is a negative response, it will be a JSON object and the content type must be `application/json`.
 
 The response is a signed JWT that is explicitly typed by setting the `typ` header parameter to `entity-events-statement+jwt` to prevent cross-JWT confusion. It is signed with a Federation Entity Key.
 
