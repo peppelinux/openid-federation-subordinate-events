@@ -31,13 +31,13 @@ organization="Self-Issued Consulting"
 
 .# Abstract
 
-This specification defines the `federation_subordinate_events_endpoint` for the OpenID Federation. It provides a mechanism for Trust Anchors and Intermediates to publish historical events related to their Immediate Subordinates, such as registration, revocation, and updates of their Federation Entity Keys.
+This specification defines the Federation Subordinate Events Endpoint for implementations using OpenID Federation 1.0. It provides a mechanism for Trust Anchors and Intermediates to publish historical events related to their Immediate Subordinates, such as registration, revocation, and updates of their Federation Entity Keys.
 
 {mainmatter}
 
 # Introduction
 
-The `federation_subordinate_events_endpoint` is introduced to allow Trust Anchors and Intermediates to maintain and publish a track of registration events about their Immediate Subordinates. This endpoint is useful for transparency and accountability within a federation, by providing a historical record of significant events.
+The Federation Subordinate Events Endpoint is introduced to allow Trust Anchors and Intermediates to maintain and publish a track of registration events about their Immediate Subordinates. This endpoint is useful for transparency and accountability within a federation, by providing a historical record of significant events.
 
 ## Requirements Notation and Conventions
 
@@ -56,11 +56,11 @@ and "Trust Mark", "Federation Entity", "Federation Entity Key", "Trust Anchor",
 
 ## Endpoint Description
 
-The `federation_subordinate_events_endpoint` is an optional endpoint that MAY be published by Trust Anchors and Intermediates. It MUST use the `https` scheme and MAY include port, path, and query parameter components encoded in `application/x-www-form-urlencoded` format. It MUST NOT contain a fragment component.
+The Federation Subordinate Events Endpoint is an optional endpoint that MAY be published by Trust Anchors and Intermediates. It MUST use the `https` scheme and MAY include port, path, and query parameter components encoded in `application/x-www-form-urlencoded` format. It MUST NOT contain a fragment component.
 
 ### Endpoint Location
 
-The location of the `federation_subordinate_events_endpoint` is published in the `federation_entity` metadata, using the `federation_subordinate_events_endpoint` parameter.
+The location of the Federation Subordinate Events Endpoint is published in the `federation_entity` metadata, using the `federation_subordinate_events_endpoint` parameter.
 
 The following is a non-normative example of an Entity Configuration payload, for an Immediate Superior that includes the `federation_subordinate_events_endpoint`:
 
