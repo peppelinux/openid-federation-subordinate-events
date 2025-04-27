@@ -77,7 +77,7 @@ Host: immediate-superior.example.org
 
 ### Response Format
 
-A successful response MUST use the HTTP status code 200 and the content type `application/entity-events-statement+jwt`. The response includes relevant events from the federation's perspective of the Entity. If it is a negative response, it will be a JSON object and the content type must be `application/json`.
+A successful response MUST use the HTTP status code 200 and the content type `application/entity-events-statement+jwt`. The response includes relevant events from the federation's perspective of the Entity. If it is a negative response, it will be a JSON object and the content type MUST be `application/json` and use the errors defined in [@!OpenID.Federation].
 
 The response is a signed JWT that is explicitly typed by setting the `typ` header parameter to `entity-events-statement+jwt` to prevent cross-JWT confusion. It is signed with a Federation Entity Key.
 
@@ -88,8 +88,8 @@ The claims in the Subordinate events statement response are:
 - **iss**: (REQUIRED) String. Entity Identifier of the issuer of the response.
 - **sub**: (REQUIRED) String. Entity Identifier of the subject of the response.
 - **iat**: (REQUIRED) Number. Time when this response was issued, expressed as Seconds Since the Epoch.
-- **exp**: (REQUIRED) Number. Time when this resolution is no longer valid, expressed as Seconds Since the Epoch.
-- **federation_events**: (REQUIRED) Array of JSON objects, each representing an event of particular interest from the federation's perspective.
+- **exp**: (OPTIONAL) Number. Time when this resolution is no longer valid, expressed as Seconds Since the Epoch.
+- **federation_registration_events**: (REQUIRED) Array of JSON objects, each representing an event of particular interest from the federation's perspective.
 
 #### Event Object Parameters
 
@@ -105,7 +105,7 @@ The claims in the Subordinate events statement response are:
   "sub": "https://rp.example.edu",
   "iat": 1590000000,
   "exp": 1621536000,
-  "events": [
+  "federation_registration_events": [
     {
       "iat": 1590000000,
       "event": "registration"
