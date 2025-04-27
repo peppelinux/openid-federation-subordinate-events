@@ -56,6 +56,38 @@ The `federation_subordinate_events_endpoint` is an optional endpoint that MAY be
 
 The location of the `federation_subordinate_events_endpoint` is published in the `federation_entity` metadata, using the `federation_subordinate_events_endpoint` parameter.
 
+
+### Example Entity Configuration
+
+The following is a non-normative example of an Entity Configuration payload, for an Immediate Superior that includes the `federation_subordinate_events_endpoint`:
+
+```json
+{
+  "iss": "https://immediate-superior.example.org",
+  "sub": "https://immediate-superior.example.org",
+  "iat": 1590000000,
+  "exp": 1590086400,
+  "jwks": {
+    "keys": [
+      {
+        "kty": "RSA",
+        "kid": "key1",
+        "use": "sig",
+        "n": "n4EPtAOCc9AlkeQHPzHStgAbgs7bTZLwUBZdR8_KuKPEHLd4rHVTeT",
+        "e": "AQAB"
+      }
+    ]
+  },
+  "metadata": {
+    "federation_entity": {
+      "federation_subordinate_events_endpoint": "https://immediate-superior.example.org/events",
+      "federation_resolve_endpoint": "https://immediate-superior.example.org/resolve",
+      "federation_status_endpoint": "https://immediate-superior.example.org/status"
+    }
+  }
+}
+```
+
 ## Subordinate Historical Events Request
 
 ### Request Format
@@ -101,10 +133,9 @@ The claims in the Subordinate events statement response are:
 
 ```json
 {
-  "iss": "https://edugain.org",
-  "sub": "https://rp.example.edu",
+  "iss": "https://immediate-superior.example.org",
+  "sub": "https://rp.example.org",
   "iat": 1590000000,
-  "exp": 1621536000,
   "federation_registration_events": [
     {
       "iat": 1590000000,
@@ -127,13 +158,6 @@ The claims in the Subordinate events statement response are:
 }
 ```
 
-# Federation Entity Property
-
-In order for Entities to advertise the `federation_subordinate_events_endpoint`, a new property has been defined adding to the existing set of Federation Entity Metadata as defined in [@!OpenID.Federation].
-
-| **Metadata**                      | **Availability** | **Description**                                                                                                                                                                                                                                                                         |
-|-----------------------------------|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| federation_subordinate_events_endpoint | OPTIONAL         | The Federation Subordinate Events Endpoint as described above. All constraints and restrictions on the listing of this endpoint are identical to that defined for the `federation_list_endpoint` as defined in OpenID Federation 1.0 
 
 # Acknowledgements
 
