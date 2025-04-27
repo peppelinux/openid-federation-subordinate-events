@@ -31,13 +31,13 @@ organization="Self-Issued Consulting"
 
 .# Abstract
 
-This specification defines the `federation_subordinate_events_endpoint` for the OpenID Federation. It provides a mechanism for Trust Anchors and Intermediates to publish historical events related to their Immediate Subordinates, such as registration, revocation, and updates.
+This specification defines the `federation_subordinate_events_endpoint` for the OpenID Federation. It provides a mechanism for Trust Anchors and Intermediates to publish historical events related to their Immediate Subordinates, such as registration, revocation, and updates of their Federation Entity Keys.
 
 {mainmatter}
 
 # Introduction
 
-The `federation_subordinate_events_endpoint` is introduced to allow Trust Anchors and Intermediates to maintain and publish a track of accreditation events about their Immediate Subordinates. This endpoint is crucial for ensuring transparency and accountability within a federation by providing a historical record of significant events.
+The `federation_subordinate_events_endpoint` is introduced to allow Trust Anchors and Intermediates to maintain and publish a track of registration events about their Immediate Subordinates. This endpoint is useful for transparency and accountability within a federation, by providing a historical record of significant events.
 
 ## Endpoint Description
 
