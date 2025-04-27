@@ -2,7 +2,7 @@
 title = "OpenID Federation Subordinate Events Endpoint 1.0 - draft 01"
 abbrev = "openid-federation-subordinate-events"
 ipr = "none"
-workgroup = "OpenID Connect A/B"
+workgroup = "individual"
 keyword = ["security", "openid", "federation"]
 
 [seriesInfo]
@@ -38,6 +38,12 @@ This specification defines the `federation_subordinate_events_endpoint` for the 
 # Introduction
 
 The `federation_subordinate_events_endpoint` is introduced to allow Trust Anchors and Intermediates to maintain and publish a track of registration events about their Immediate Subordinates. This endpoint is useful for transparency and accountability within a federation, by providing a historical record of significant events.
+
+## Requirements Notation and Conventions
+
+The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT
+RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP
+14 [@!RFC2119] [@!RFC8174] when, and only when, they appear in all capitals, as shown here.
 
 
 # Terminology
@@ -170,6 +176,32 @@ The following event types are defined in this specification:
 Additional event types MAY be defined by trust frameworks or federation operators to meet specific requirements. Such custom event types SHOULD be documented in the respective trust framework or federation operator's documentation.
 
 
+{backmatter}
+
+<reference anchor="OpenID.Federation" target="https://openid.net/specs/openid-federation-1_0.html">
+    <front>
+        <title>OpenID Federation 1.0</title>
+        <author fullname="R. Hedberg, Ed.">
+            <organization>independent</organization>
+        </author>
+        <author fullname="Michael B. Jones">
+            <organization>Self-Issued Consulting</organization>
+        </author>
+        <author fullname="A. Solberg">
+            <organization>Sikt</organization>
+        </author>
+        <author fullname="John Bradley">
+            <organization>Yubico</organization>
+        </author>
+        <author fullname="Giuseppe De Marco">
+            <organization>independent</organization>
+        </author>
+        <author fullname="Vladimir Dzhuvinov">
+            <organization>Connect2id</organization>
+        </author>
+        <date day="24" month="October" year="2024"/>
+    </front>
+</reference>
 
 # Acknowledgements
 
