@@ -86,7 +86,7 @@ The following is a non-normative example of an Entity Configuration payload, for
 }
 ```
 
-## Subordinate Historical Events Request
+## Subordinate Events Request
 
 ### Request Format
 
@@ -94,7 +94,7 @@ The request to the `federation_subordinate_events_endpoint` MUST be an HTTP GET 
 
 - **sub**: (REQUIRED) The Entity Identifier of the subject for which the historical track is being requested.
 
-When client authentication is used, the request must be an HTTP POST request, with the parameters passed in the POST body.
+When Client authentication is used, the request MUST be an HTTP POST request, with the parameters passed in the POST body.
 
 #### Example Request
 
@@ -155,6 +155,20 @@ The claims in the Subordinate events statement response are:
   ]
 }
 ```
+
+### Subordinate Event Types
+
+The following event types are defined in this specification:
+
+- **metadata_policy_update**: Indicates when an Entity's metadata policy was updated in the Subordinate Statement about that entity, using the `metadata_policy` parameter.
+- **metadata_update**: Indicates when an Entity's metadata was updated in the Subordinate Statement about that entity, using the `metadata` parameter.
+- **registration**: Indicates when an Entity was registered in the federation. When a registration event is present, `metadata_update`, `metadata_policy_update`, and `jwks_update` events MUST NOT be provided at the same time, since the Entity registration is assumed to configure the initial configuration about that Entity.
+- **revocation**: Indicates when an Entity's registration was revoked.
+- **suspension**: Indicates when an Entity's registration was suspended.
+- **jwks_update**: Indicates when an Entity's Federation Entity Keys were updated.
+
+Additional event types MAY be defined by trust frameworks or federation operators to meet specific requirements. Such custom event types SHOULD be documented in the respective trust framework or federation operator's documentation.
+
 
 
 # Acknowledgements
