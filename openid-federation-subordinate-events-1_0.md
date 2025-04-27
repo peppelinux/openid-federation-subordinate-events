@@ -56,9 +56,6 @@ The `federation_subordinate_events_endpoint` is an optional endpoint that MAY be
 
 The location of the `federation_subordinate_events_endpoint` is published in the `federation_entity` metadata, using the `federation_subordinate_events_endpoint` parameter.
 
-
-### Example Entity Configuration
-
 The following is a non-normative example of an Entity Configuration payload, for an Immediate Superior that includes the `federation_subordinate_events_endpoint`:
 
 ```json
@@ -80,9 +77,10 @@ The following is a non-normative example of an Entity Configuration payload, for
   },
   "metadata": {
     "federation_entity": {
+      "federation_fetch_endpoint": "https://immediate-superior.example.org/fetch",
+      "federation_list_endpoint": "https://immediate-superior.example.org/list",
       "federation_subordinate_events_endpoint": "https://immediate-superior.example.org/events",
-      "federation_resolve_endpoint": "https://immediate-superior.example.org/resolve",
-      "federation_status_endpoint": "https://immediate-superior.example.org/status"
+      "federation_resolve_endpoint": "https://immediate-superior.example.org/resolve"
     }
   }
 }
